@@ -1,0 +1,139 @@
+DESCRIPTION: 
+The main purpose is to verify the sintaxis of the cross references are correct, NOT modify the file, the script can print the error like:
+ERROR LINE 23
+ERROR LINE 56
+…
+If is possible indicate the type of error good, but if is so complicate forget.
+
+
+in english the equivalence of the Cross References are see, see also, … 
+we need to check if all have the right sintaxis.
+The cross reference are locate at the end of each book inside of the chapter INDEX
+For example the page number 409 of Modern Buddhism
+Sometimes you can see the letter g isolate, this means the index entrie is included in the glosary.
+
+
+4 CROSS REFERENCES:
+véase                   #means 'see' in english
+véase también           #'see also'
+véanse 
+véanse también
+
+
+SINTAXIS:
+Index entry  +  
+_  +  
+number/glosary/nothing  +  
+(cross reference (separate by comma o semicolon) ….)
+
+
+
+Example:
+
+human rights_101, 231 (véanse también naturaleza última; unión de las dos verdades;  vacuidad, vacio )
+
+
+*Note: the semicolom means the sub-level of the entry, for example, this case means only one entry because the semicolon indicate the entry Universal Declaration is inside the human rights
+Then when you see a semicolons, means is only one entry, but commas is two entries.
+The word también means they are letter g or number pages in the same index entries
+
+
+
+Graphical relation between the semicolons and commas:
+
+WHEN IS USED EACH?
+véase
+When the index entrie doesn’t contain any page number. 
+Cases:
+human being(s)_(véase human rights; Universal Declaration)
+human being(s)_(véase human rights)
+
+
+Véase también
+When the index entrie contain any page number o letter g (glosary)
+Cases:
+human being(s)_21, 231, 250-256 (véase también human rights; Universal Declaration) 
+human being(s)_g (véase también human rights; Universal Declaration)
+human being(s)_21, 231, 250-256, g (véase también human rights; Universal Declaration)
+
+véanse
+When the cross reference are more than one.
+Cases:
+human being(s)_(véanse human rights, Universal Declaration)
+human being(s)_(véanse human rights; Universal Declaration, liberty)
+
+
+Véanse también
+When the index entrie contain any page number o letter g (glosary), and more than one cross references.
+Cases:
+human being(s)_21, 231, 250-256 (véanse también human rights, Universal Declaration)
+human being(s)_21, 231, 250-256 (véanse también human rights; Universal Declaration, liberty)
+human being(s)_g (véanse también human rights, Universal Declaration)
+human being(s)_g (véanse también human rights; Universal Declaration, liberty)
+human being(s)_21, 231, 250-256, g (véanse también human rights, Universal Declaration)
+human being(s)_21, 231, 250-256, g (véanse también human rights; Universal Declaration, liberty)
+
+
+g
+The letter g means the entry are present also in the chapter: “Glosary” of terms 
+Here all cases:
+human being(s)_g
+human being(s)_g (human rights)
+human being(s)_21, 231, 250-256, g
+human being(s)_21, 231, 250-256, g (human rights)
+
+
+
+OTHER SINTAXIS ERRORS
+The script also need find errors like this:
+
+ERROR: Two or more spaces anywhere:  
+human being(s)_101, 231, g  (véanse también human rights, Universal Declaration)
+human being(s)_  101, 231, g (véanse también human rights, Universal Declaration)
+human being(s)_  101, 231, g (véanse también human rights,  Universal Declaration)
+human being(s)_101,  231, g (véanse también human rights,  Universal Declaration)
+
+ERROR: wrong space after index entry  
+human being(s) _101,  231, g
+
+
+ERROR: duplicate letter g (only can be one per entry)	  
+human being(s)_101,  231, g, g
+
+ERROR: the slash without spaces	  
+Human / being(s)_101,  231, g (Universal Declaration)
+Human / being(s)_101,  231, g (Universal / Declaration)
+CORRECT: Human/being(s) _101,  231, g
+
+ERROR: wrongs commas before or after the parentesis:  
+human being(s)_101, 231, g, (véanse también human rights; Universal Declaration, liberty)
+human being(s)_101, 231, (véanse también human rights; Universal Declaration, liberty)
+human being(s)_, (véanse también human rights; Universal Declaration, liberty)
+human being(s)_(véanse también human rights; Universal Declaration, liberty),
+
+ERROR: wrongs commas before or after the parentesis:  
+human being(s)_g, (véanse también human rights)
+human being(s)_,g, (véanse también human rights)
+human being(s)_,g (véanse también human rights)
+CORRECT: human being(s)_g (véanse también human rights)
+
+ERROR: wrong order of the elements:  
+Rigth sintaxis: numbers + g + (véase...)
+human being(s)_g, 101, 231 (véanse también human rights; Universal Declaration, liberty)
+human being(s)_(véanse human rights), g, 101, 231
+
+ERROR: more than one commas:  
+human being(s)_101,, 231 (véanse también human rights; Universal Declaration, liberty)
+
+ERROR: parentesis missing  
+human being(s)_101, 231 (véanse también human rights; Universal Declaration, liberty
+human being(s _101, 231 (véanse también human rights; Universal Declaration, liberty
+
+
+ERROR: parentesis wrongs:
+ human being(s)) _101, 231 (véanse también human rights; Universal Declaration, liberty)
+ human being(s) _101, 231 (véanse también human rights; Universal Declaration, liberty))
+
+
+ERROR: missing underscore after index entry:
+human being(s)101
