@@ -1,6 +1,6 @@
 appdirs==1.4.3
 attrs==19.3.0
-black==19.10b0
+black==24.3.0
 Click==7.0
 et-xmlfile==1.0.1
 jdcal==1.4.1
